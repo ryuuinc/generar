@@ -1,0 +1,24 @@
+{
+  "name": "gfwboy",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "renew": "node scripts/renew/index.js",
+    "generate": "node scripts/generate/index.js",
+    "upload": "node scripts/upload/index.js",
+    "build": "run-s renew generate upload"
+  },
+  "author": "Tienuon",
+  "license": "",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^3.0.0",
+    "droplr-api": "^1.0.0",
+    "socks-proxy-agent": "^5.0.0",
+    "yaml": "^1.8.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
