@@ -23,13 +23,9 @@ let { proxyArr, iplcArr, relayArr } = strToNodeArray(proxyStr);
 let proxyGroup = [
   { name: '🔰 线路', type: 'select', proxies: ['🚀 专线', '✈️ 中继'] },
   { name: '📺 媒体', type: 'select', proxies: ['✈️ 中继', '🚀 专线'] },
-  { name: 'Ⓜ️ 微软', type: 'select', proxies: ['🎯 直连', '🚀 专线'] },
   { name: '🍎 苹果', type: 'select', proxies: ['🎯 直连', '🚀 专线'] },
-  {
-    name: '🐟 摸鱼',
-    type: 'select',
-    proxies: ['🔰 线路选择', '🚀 专线', '✈️ 中继', '🎯 直连']
-  },
+  { name: 'Ⓜ️ 微软', type: 'select', proxies: ['🎯 直连', '🚀 专线'] },
+  { name: '🐟 摸鱼', type: 'select', proxies: ['🔰 线路', '🚀 专线', '✈️ 中继', '🎯 直连'] },
   { name: '🚀 专线', type: 'select', proxies: iplcArr },
   { name: '✈️ 中继', type: 'select', proxies: relayArr },
   { name: '🎯 直连', type: 'select', proxies: ['DIRECT'] }

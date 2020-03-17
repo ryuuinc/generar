@@ -36,4 +36,4 @@ Proxy: null
 Proxy Group: null
 Rule:
   - GEOIP,CN,DIRECT
-  - MATCH,🐟 漏网之鱼
+  - MATCH,🐟 摸鱼

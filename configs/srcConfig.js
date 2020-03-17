@@ -11,22 +11,15 @@ module.exports = {
   clashOwn: pathResolve('../tmp/ClashOwn.yaml'),
   // White List(Shadowrocket)
   whiteList: pathResolve('../tmp/WhiteList.conf'),
-  // 🎯 全球直连
-  localAreaNetwork: pathResolve('../tmp/LocalAreaNetwork.list'),
-  // Ⓜ️ 微软服务
-  microsoft: pathResolve('../tmp/Microsoft.list'),
-  // 🍎 苹果服务
-  apple: pathResolve('../tmp/Apple.list'),
-  // 📺 国外媒体（神机）
-  globalMedia: pathResolve('../tmp/GlobalMedia.list'),
-  // 📲 电报信息（神机）
+  // Clash PROXY parts
   telegram: pathResolve('../tmp/Telegram.list'),
-  // 🎯 全球直连
-  googleCN: pathResolve('../tmp/GoogleCN.list'),
-  // 🔰 线路选择
+  globalMedia: pathResolve('../tmp/GlobalMedia.list'),
   proxyLite: pathResolve('../tmp/ProxyLite.list'),
-  // 🎯 全球直连
+  // Clash DIRECT parts
+  apple: pathResolve('../tmp/Apple.list'),
+  microsoft: pathResolve('../tmp/Microsoft.list'),
+  googleCN: pathResolve('../tmp/GoogleCN.list'),
+  localAreaNetwork: pathResolve('../tmp/LocalAreaNetwork.list'),
   chinaDomain: pathResolve('../tmp/ChinaDomain.list'),
-  // 🎯 全球直连
   chinaCompanyIp: pathResolve('../tmp/ChinaCompanyIp.list')
 };
