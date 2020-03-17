@@ -3,39 +3,39 @@ const srcConfig = require('../../configs/srcConfig');
 const templateConfig = [
   {
     src: srcConfig.localAreaNetwork,
-    mode: '🎯 全球直连'
+    mode: '🎯 直连'
   },
   {
     src: srcConfig.microsoft,
-    mode: 'Ⓜ️ 微软服务'
+    mode: 'Ⓜ️ 微软'
   },
   {
     src: srcConfig.apple,
-    mode: '🍎 苹果服务'
+    mode: '🍎 苹果'
   },
   {
     src: srcConfig.globalMedia,
-    mode: '📺 国外媒体'
+    mode: '📺 媒体'
   },
   {
     src: srcConfig.telegram,
-    mode: '📲 电报信息'
+    mode: '🔰 线路'
   },
   {
     src: srcConfig.googleCN,
-    mode: '🎯 全球直连'
+    mode: '🎯 直连'
   },
   {
     src: srcConfig.proxyLite,
-    mode: '🔰 线路选择'
+    mode: '🔰 线路'
   },
   {
     src: srcConfig.chinaDomain,
-    mode: '🎯 全球直连'
+    mode: '🎯 直连'
   },
   {
     src: srcConfig.chinaCompanyIp,
-    mode: '🎯 全球直连'
+    mode: '🎯 直连'
   }
 ];
 
