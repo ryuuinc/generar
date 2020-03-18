@@ -1,16 +1,14 @@
 {
   "name": "generar",
   "version": "0.0.1",
-  "description": "",
-  "main": "",
+  "description": "A quick tool to generate Clash config",
+  "author": "Tienuon",
   "scripts": {
     "renew": "node scripts/renew/index.js",
     "generate": "node scripts/generate/index.js",
     "upload": "node scripts/upload/index.js",
     "build": "run-s renew generate upload"
   },
-  "author": "Tienuon",
-  "license": "",
   "dependencies": {
     "axios": "^0.19.2",
     "chalk": "^3.0.0",
