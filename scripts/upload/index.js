@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
-const Droplr = require('droplr-api');
+const droplr = require('droplr-api');
 
 // require own modules
 const { await2js } = require('../util');
@@ -11,8 +11,8 @@ const uploadConfig = require('./config');
 
 // prepare phase
 const tip = chalk.green.bold;
-const client = new Droplr.Client({
-  auth: new Droplr.BasicAuth(username, password),
+const client = new droplr.Client({
+  auth: new droplr.BasicAuth(username, password),
   ...axiosConfig
 });
 

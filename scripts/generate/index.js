@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const YAML = require('yaml');
+const yaml = require('yaml');
 const chalk = require('chalk');
 
 // require own modules
@@ -37,13 +37,13 @@ const generate = () => {
   console.log(tip('** Generate Start **'));
 
   // Clash Template
-  let clashTemplate = YAML.parse(fs.readFileSync(clashTpl, 'utf-8'));
+  let clashTemplate = yaml.parse(fs.readFileSync(clashTpl, 'utf-8'));
 
   // generate Clash Own config
   clashTemplate['Proxy'] = proxyArr;
   clashTemplate['Proxy Group'] = proxyGroup;
   clashTemplate['Rule'] = rule.concat(clashTemplate['Rule']);
-  fs.writeFileSync(clashOwn, YAML.stringify(clashTemplate));
+  fs.writeFileSync(clashOwn, yaml.stringify(clashTemplate));
   console.log(tip('✓ Clash Own Config'));
 
   // Generate End
