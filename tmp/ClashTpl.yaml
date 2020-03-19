@@ -31,9 +31,10 @@ cfw-bypass:
   - 172.31.*
   - 192.168.*
   - <local>
+cfw-latency-url: http://www.gstatic.com/generate_204
 cfw-latency-timeout: 5000
-Proxy: null
-Proxy Group: null
+Proxy: ~
+Proxy Group: ~
 Rule:
-  - GEOIP,CN,DIRECT
+  - GEOIP,CN,🎯 直连
   - MATCH,🐟 摸鱼
