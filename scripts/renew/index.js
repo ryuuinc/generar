@@ -5,7 +5,7 @@ const chalk = require('chalk');
 // require own modules
 const axiosConfig = require('../../configs/axiosConfig');
 const renewConfig = require('./config');
-const { await2js } = require('../util');
+const { packPromise } = require('../util');
 
 // prepare phase
 const tip = chalk.green.bold;
@@ -21,7 +21,7 @@ const renew = async (config) => {
     let { src, url } = config[i];
     let basename = path.basename(src);
 
-    let [error, response] = await await2js(axios.get(url));
+    let [error, response] = await packPromise(axios.get(url));
 
     if (error) {
       console.log(tip(`╳ ${basename}`));

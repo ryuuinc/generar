@@ -1,7 +1,7 @@
 const path = require('path');
 
 /* handle promise */
-const await2js = (promise) => {
+const packPromise = (promise) => {
   return promise.then((result) => [undefined, result]).catch((error) => [error, undefined]);
 };
 
@@ -14,7 +14,7 @@ const decodeBase64 = (base64Str) => {
 };
 
 module.exports = {
-  await2js,
+  packPromise,
   pathResolve,
   decodeBase64
 };
