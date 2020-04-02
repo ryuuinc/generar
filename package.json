@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "droplr-api": "^1.0.0",
     "socks-proxy-agent": "^5.0.0",
     "yaml": "^1.8.2"
