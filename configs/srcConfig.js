@@ -13,7 +13,7 @@ module.exports = {
   whiteList: pathResolve('../tmp/WhiteList.conf'),
   // Clash PROXY parts
   telegram: pathResolve('../tmp/Telegram.list'),
-  globalMedia: pathResolve('../tmp/GlobalMedia.list'),
+  proxyMedia: pathResolve('../tmp/ProxyMedia.list'),
   proxyLite: pathResolve('../tmp/ProxyLite.list'),
   // Clash DIRECT parts
   apple: pathResolve('../tmp/Apple.list'),

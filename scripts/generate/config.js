@@ -18,7 +18,7 @@ const templateConfig = [
     mode: '🔰 线路'
   },
   {
-    src: srcConfig.globalMedia,
+    src: srcConfig.proxyMedia,
     mode: '📺 媒体'
   },
   {

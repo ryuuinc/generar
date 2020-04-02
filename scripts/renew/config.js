@@ -41,11 +41,11 @@ const renewConfig = [
   },
   {
     src: srcConfig.telegram,
-    url: urlConfig.huaRuleSet + '/Telegram.list'
+    url: urlConfig.aclRuleSet + '/Telegram.list'
   },
   {
-    src: srcConfig.globalMedia,
-    url: urlConfig.huaRuleSet + '/GlobalMedia.list'
+    src: srcConfig.proxyMedia,
+    url: urlConfig.aclRuleSet + '/ProxyMedia.list'
   },
   {
     src: srcConfig.proxyLite,
