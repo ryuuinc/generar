@@ -4,7 +4,7 @@ module.exports = {
   drops: {
     ssr: '7miiBr',
     ssd: 'dEFEJN',
-    clashOwn: 'rsgfUn',
-    whiteList: 'H1itf2'
+    whiteList: 'H1itf2',
+    clashOwn: 'rsgfUn'
   }
 };
