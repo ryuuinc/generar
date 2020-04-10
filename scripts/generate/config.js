@@ -1,42 +1,64 @@
-const srcConfig = require('../../configs/srcConfig');
+const { tmpResolve } = require('../util');
 
-const templateConfig = [
+// deal with all configs
+let sourceConfig = {
+  ssd: 'SSD.txt',
+  clashTpl: 'ClashTpl.yaml',
+  clashOwn: 'ClashOwn.yaml'
+};
+
+for (let name in sourceConfig) {
+  sourceConfig[name] = tmpResolve(sourceConfig[name]);
+}
+
+let templateConfig = [
   {
-    src: srcConfig.localAreaNetwork,
+    name: 'LocalAreaNetwork.list',
     mode: '🎯 直连'
   },
   {
-    src: srcConfig.apple,
+    name: 'UnBan.list',
+    mode: '🎯 直连'
+  },
+  {
+    name: 'Apple.list',
     mode: '🍎 苹果'
   },
   {
-    src: srcConfig.microsoft,
+    name: 'Microsoft.list',
     mode: 'Ⓜ️ 微软'
   },
   {
-    src: srcConfig.telegram,
-    mode: '🔰 线路'
+    name: 'Telegram.list',
+    mode: '📲 电报'
   },
   {
-    src: srcConfig.proxyMedia,
+    name: 'ProxyMedia.list',
     mode: '📺 媒体'
   },
   {
-    src: srcConfig.googleCN,
+    name: 'GoogleCN.list',
     mode: '🎯 直连'
   },
   {
-    src: srcConfig.proxyLite,
+    name: 'ProxyLite.list',
     mode: '🔰 线路'
   },
   {
-    src: srcConfig.chinaDomain,
+    name: 'ChinaDomain.list',
     mode: '🎯 直连'
   },
   {
-    src: srcConfig.chinaCompanyIp,
+    name: 'ChinaCompanyIp.list',
     mode: '🎯 直连'
   }
 ];
 
-module.exports = templateConfig;
+templateConfig.forEach((conf) => {
+  conf.name = tmpResolve(conf.name);
+});
+
+module.exports = {
+  sourceConfig,
+  templateConfig
+};

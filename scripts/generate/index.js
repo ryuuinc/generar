@@ -6,10 +6,10 @@ const chalk = require('chalk');
 // require own modules
 const templateToRule = require('./rule');
 const strToNodeArray = require('./proxy');
-const { ssd, clashTpl, clashOwn } = require('../../configs/srcConfig');
-const templateConfig = require('./config');
+const { sourceConfig, templateConfig } = require('./config');
 
 // prepare phase
+const { ssd, clashTpl, clashOwn } = sourceConfig;
 const tip = chalk.green.bold;
 
 // get Clash 'Rule'
@@ -21,8 +21,9 @@ let { proxyArr, iplcArr, relayArr } = strToNodeArray(proxyStr);
 
 // get Clash 'Proxy Group'
 let proxyGroup = [
-  { name: '🔰 线路', type: 'select', proxies: ['🚀 专线', '✈️ 中继'] },
+  { name: '🔰 线路', type: 'select', proxies: ['✈️ 中继', '🚀 专线'] },
   { name: '📺 媒体', type: 'select', proxies: ['✈️ 中继', '🚀 专线'] },
+  { name: '📲 电报', type: 'select', proxies: ['🚀 专线', '✈️ 中继'] },
   { name: '🍎 苹果', type: 'select', proxies: ['🎯 直连', '🚀 专线'] },
   { name: 'Ⓜ️ 微软', type: 'select', proxies: ['🎯 直连', '🚀 专线'] },
   { name: '🐟 摸鱼', type: 'select', proxies: ['🔰 线路', '🚀 专线', '✈️ 中继', '🎯 直连'] },

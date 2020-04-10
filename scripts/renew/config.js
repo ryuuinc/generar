@@ -1,56 +1,51 @@
+const { tmpResolve } = require('../util');
 const urlConfig = require('../../configs/urlConfig');
-const srcConfig = require('../../configs/srcConfig');
 
-// renew config
-const renewConfig = [
+// deal with all configs
+const { ssrSub, ssdSub, whiteList, ruleSet } = urlConfig;
+
+let subConf = [
   {
-    src: srcConfig.ssr,
-    url: urlConfig.subscribe
+    name: 'SSR.txt',
+    url: ssrSub
   },
   {
-    src: srcConfig.ssd,
-    url: urlConfig.subscribe + '?mu=3'
-  },
-  {
-    src: srcConfig.whiteList,
-    url: urlConfig.shadowrocket + '/sr_top500_whitelist.conf'
-  },
-  {
-    src: srcConfig.googleCN,
-    url: urlConfig.aclRuleSet + '/GoogleCN.list'
-  },
-  {
-    src: srcConfig.localAreaNetwork,
-    url: urlConfig.aclRuleSet + '/LocalAreaNetwork.list'
-  },
-  {
-    src: srcConfig.chinaDomain,
-    url: urlConfig.aclRuleSet + '/ChinaDomain.list'
-  },
-  {
-    src: srcConfig.chinaCompanyIp,
-    url: urlConfig.aclRuleSet + '/ChinaCompanyIp.list'
-  },
-  {
-    src: srcConfig.apple,
-    url: urlConfig.aclRuleSet + '/Apple.list'
-  },
-  {
-    src: srcConfig.microsoft,
-    url: urlConfig.aclRuleSet + '/Microsoft.list'
-  },
-  {
-    src: srcConfig.telegram,
-    url: urlConfig.aclRuleSet + '/Telegram.list'
-  },
-  {
-    src: srcConfig.proxyMedia,
-    url: urlConfig.aclRuleSet + '/ProxyMedia.list'
-  },
-  {
-    src: srcConfig.proxyLite,
-    url: urlConfig.aclRuleSet + '/ProxyLite.list'
+    name: 'SSD.txt',
+    url: ssdSub
   }
 ];
+
+let listConf = [
+  {
+    name: 'WhiteList.conf',
+    url: whiteList
+  }
+];
+
+let setList = [
+  'LocalAreaNetwork.list',
+  'UnBan.list',
+  'GoogleCN.list',
+  'Microsoft.list',
+  'Apple.list',
+  'Telegram.list',
+  'ProxyMedia.list',
+  'ProxyLite.list',
+  'ChinaDomain.list',
+  'ChinaCompanyIp.list'
+];
+
+let setConf = setList.map((name) => {
+  return {
+    name,
+    url: ruleSet + name
+  };
+});
+
+let renewConfig = [].concat(subConf, listConf, setConf);
+
+renewConfig.forEach((conf) => {
+  conf.name = tmpResolve(conf.name);
+});
 
 module.exports = renewConfig;

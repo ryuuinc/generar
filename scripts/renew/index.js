@@ -18,15 +18,14 @@ const renew = async (config) => {
 
   let leng = config.length;
   for (let i = 0; i < leng; i++) {
-    let { src, url } = config[i];
-    let basename = path.basename(src);
-
+    let { name, url } = config[i];
     let [error, response] = await packPromise(axios.get(url));
 
+    let basename = path.basename(name);
     if (error) {
       console.log(tip(`╳ ${basename}`));
     } else {
-      fs.writeFileSync(src, response.data);
+      fs.writeFileSync(name, response.data);
       console.log(tip(`✓ ${basename}`));
     }
   }

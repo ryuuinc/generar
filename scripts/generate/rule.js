@@ -6,8 +6,8 @@ const templateToRule = (config) => {
   let configLeng = config.length;
 
   for (let i = 0; i < configLeng; i++) {
-    let { src, mode } = config[i];
-    let template = fs.readFileSync(src, 'utf-8').toString();
+    let { name, mode } = config[i];
+    let template = fs.readFileSync(name, 'utf-8').toString();
 
     template = template.match(/^(?=IP|DOMAIN)+.*$/gm);
 

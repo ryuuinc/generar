@@ -6,7 +6,7 @@ const packPromise = (promise) => {
 };
 
 /* resolve path */
-const pathResolve = (src) => path.resolve(__dirname, src);
+const tmpResolve = (src) => path.resolve(__dirname, '../tmp', src);
 
 /* decodeBase64 */
 const decodeBase64 = (base64Str) => {
@@ -15,6 +15,6 @@ const decodeBase64 = (base64Str) => {
 
 module.exports = {
   packPromise,
-  pathResolve,
+  tmpResolve,
   decodeBase64
 };

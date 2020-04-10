@@ -1,23 +1,57 @@
-const srcConfig = require('../../configs/srcConfig');
-const droplrConfig = require('../../configs/droplrConfig');
+const { tmpResolve } = require('../util');
+const { username, password, drops } = require('../../configs/droplrConfig');
 
-const uploadConfig = [
+// deal with all configs
+let accountConfig = {
+  username,
+  password
+};
+
+const { ssr, ssd, whiteList, clashOwn } = drops;
+
+let uploadConfig = [
   {
-    id: droplrConfig.drops.ssr,
-    src: srcConfig.ssr
+    id: ssr,
+    name: 'SSR.txt'
   },
   {
-    id: droplrConfig.drops.ssd,
-    src: srcConfig.ssd
+    id: ssd,
+    name: 'SSD.txt'
   },
   {
-    id: droplrConfig.drops.clashOwn,
-    src: srcConfig.clashOwn
+    id: whiteList,
+    name: 'WhiteList.conf'
   },
   {
-    id: droplrConfig.drops.whiteList,
-    src: srcConfig.whiteList
+    id: clashOwn,
+    name: 'ClashOwn.yaml'
   }
 ];
 
-module.exports = uploadConfig;
+uploadConfig.forEach((conf) => {
+  conf.name = tmpResolve(conf.name);
+});
+
+// const uploadConfig = [
+//   {
+//     id: droplrConfig.drops.ssr,
+//     src: srcConfig.ssr
+//   },
+//   {
+//     id: droplrConfig.drops.ssd,
+//     src: srcConfig.ssd
+//   },
+//   {
+//     id: droplrConfig.drops.clashOwn,
+//     src: srcConfig.clashOwn
+//   },
+//   {
+//     id: droplrConfig.drops.whiteList,
+//     src: srcConfig.whiteList
+//   }
+// ];
+
+module.exports = {
+  accountConfig,
+  uploadConfig
+};
