@@ -21,15 +21,16 @@ let { proxyArr, iplcArr, relayArr } = strToNodeArray(proxyStr);
 
 // get Clash 'Proxy Group'
 let proxyGroup = [
-  { name: '🔰 线路', type: 'select', proxies: ['✈️ 中继', '🚀 专线'] },
-  { name: '📺 媒体', type: 'select', proxies: ['✈️ 中继', '🚀 专线'] },
-  { name: '📲 电报', type: 'select', proxies: ['🚀 专线', '✈️ 中继'] },
-  { name: '🍎 苹果', type: 'select', proxies: ['🎯 直连', '🚀 专线'] },
-  { name: 'Ⓜ️ 微软', type: 'select', proxies: ['🎯 直连', '🚀 专线'] },
-  { name: '🐟 摸鱼', type: 'select', proxies: ['🔰 线路', '🚀 专线', '✈️ 中继', '🎯 直连'] },
+  { name: '🔰 常见域名', type: 'select', proxies: ['🚀 专线', '✈️ 中继'] },
+  { name: '📺 国外媒体', type: 'select', proxies: ['✈️ 中继', '🚀 专线'] },
+  { name: '📲 电报服务', type: 'select', proxies: ['🚀 专线', '✈️ 中继'] },
+  { name: '🍎 苹果服务', type: 'select', proxies: ['🚀 专线', '🎯 直连'] },
+  { name: 'Ⓜ️ 微软服务', type: 'select', proxies: ['🎯 直连', '🚀 专线'] },
+  { name: '🐟 漏网之鱼', type: 'select', proxies: ['🚀 专线', '✈️ 中继', '🎯 直连'] },
   { name: '🚀 专线', type: 'select', proxies: iplcArr },
   { name: '✈️ 中继', type: 'select', proxies: relayArr },
-  { name: '🎯 直连', type: 'select', proxies: ['DIRECT'] }
+  { name: '🎯 直连', type: 'select', proxies: ['DIRECT'] },
+  { name: '🛑 拦截', type: 'select', proxies: ['REJECT'] }
 ];
 
 /* generate Clash config */

@@ -32,7 +32,8 @@ let setList = [
   'ProxyMedia.list',
   'ProxyLite.list',
   'ChinaDomain.list',
-  'ChinaCompanyIp.list'
+  'ChinaCompanyIp.list',
+  'Download.list'
 ];
 
 let setConf = setList.map((name) => {

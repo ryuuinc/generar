@@ -22,19 +22,19 @@ let templateConfig = [
   },
   {
     name: 'Apple.list',
-    mode: '🍎 苹果'
+    mode: '🍎 苹果服务'
   },
   {
     name: 'Microsoft.list',
-    mode: 'Ⓜ️ 微软'
+    mode: 'Ⓜ️ 微软服务'
   },
   {
     name: 'Telegram.list',
-    mode: '📲 电报'
+    mode: '📲 电报服务'
   },
   {
     name: 'ProxyMedia.list',
-    mode: '📺 媒体'
+    mode: '📺 国外媒体'
   },
   {
     name: 'GoogleCN.list',
@@ -42,7 +42,7 @@ let templateConfig = [
   },
   {
     name: 'ProxyLite.list',
-    mode: '🔰 线路'
+    mode: '🔰 常见域名'
   },
   {
     name: 'ChinaDomain.list',
@@ -50,6 +50,10 @@ let templateConfig = [
   },
   {
     name: 'ChinaCompanyIp.list',
+    mode: '🎯 直连'
+  },
+  {
+    name: 'Download.list',
     mode: '🎯 直连'
   }
 ];
