@@ -39,7 +39,3 @@ node_modules
 .DS_Store
 .idea
 .vscode
-
-# This Project
-tmp/*
-!tmp/ClashTpl.yaml

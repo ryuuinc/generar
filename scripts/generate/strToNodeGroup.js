@@ -1,14 +1,14 @@
 // require own modules
 const { decodeBase64 } = require('../util');
 
-/* str to node array */
-const strToNodeArray = (str) => {
-  let proxyArr = [];
+/* str to node group */
+const strToNodeGroup = (str) => {
+  let entireArr = [];
   let iplcArr = [];
   let relayArr = [];
 
-  let proxyObj = JSON.parse(decodeBase64(str.replace(/ssd:\/\//, '')));
-  let { port, encryption, password, servers } = proxyObj;
+  let entireObj = JSON.parse(decodeBase64(str.replace(/ssd:\/\//, '')));
+  let { port, encryption, password, servers } = entireObj;
   let leng = servers.length;
 
   for (let i = 0; i < leng; i++) {
@@ -25,7 +25,7 @@ const strToNodeArray = (str) => {
         break;
     }
 
-    proxyArr.push({
+    entireArr.push({
       name: remarks,
       server: server,
       port: port,
@@ -36,10 +36,10 @@ const strToNodeArray = (str) => {
   }
 
   return {
-    proxyArr,
+    entireArr,
     iplcArr,
     relayArr
   };
 };
 
-module.exports = strToNodeArray;
+module.exports = strToNodeGroup;

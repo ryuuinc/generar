@@ -3,13 +3,14 @@ const path = require('path');
 const chalk = require('chalk');
 
 // require own modules
-const axiosConfig = require('../../configs/axiosConfig');
-const renewConfig = require('./config');
+const axiosOption = require('../../configs/axiosOption');
+const { resourceConfig, ruleSetConfig } = require('../../configs/defaultConfig');
 const { packPromise } = require('../util');
 
 // prepare phase
 const tip = chalk.green.bold;
-const axios = require('axios').create(axiosConfig);
+const axios = require('axios').create(axiosOption);
+const renewConfig = [].concat(resourceConfig, ruleSetConfig);
 
 /* renew */
 const renew = async (config) => {
@@ -18,15 +19,17 @@ const renew = async (config) => {
 
   let leng = config.length;
   for (let i = 0; i < leng; i++) {
-    let { name, url } = config[i];
+    let conf = config[i];
+    if (conf.url == null) continue;
+
+    let { url, name, path } = conf;
     let [error, response] = await packPromise(axios.get(url));
 
-    let basename = path.basename(name);
     if (error) {
-      console.log(tip(`╳ ${basename}`));
+      console.log(tip(`╳ ${name}`));
     } else {
-      fs.writeFileSync(name, response.data);
-      console.log(tip(`✓ ${basename}`));
+      fs.writeFileSync(path, response.data);
+      console.log(tip(`✓ ${name}`));
     }
   }
 

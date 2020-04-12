@@ -4,20 +4,24 @@ const yaml = require('yaml');
 const chalk = require('chalk');
 
 // require own modules
-const templateToRule = require('./rule');
-const strToNodeArray = require('./proxy');
-const { sourceConfig, templateConfig } = require('./config');
+const padRuleSet = require('./padRuleSet');
+const strToNodeGroup = require('./strToNodeGroup');
+const {
+  CLASH_GENERAL_PATH,
+  CLASH_COMPLETE_PATH,
+  ruleSetConfig
+} = require('../../configs/defaultConfig');
 
 // prepare phase
-const { ssd, clashTpl, clashOwn } = sourceConfig;
 const tip = chalk.green.bold;
+const SSD_PATH = path.resolve(__dirname, '../../files/resources/SSD.txt');
 
 // get Clash 'Rule'
-let rule = templateToRule(templateConfig);
+let ruleSet = padRuleSet(ruleSetConfig);
 
 // get Clash 'Proxy'
-let proxyStr = fs.readFileSync(ssd, 'utf-8').toString();
-let { proxyArr, iplcArr, relayArr } = strToNodeArray(proxyStr);
+let ssdStr = fs.readFileSync(SSD_PATH, 'utf-8').toString();
+let { entireArr, iplcArr, relayArr } = strToNodeGroup(ssdStr);
 
 // get Clash 'Proxy Group'
 let proxyGroup = [
@@ -38,15 +42,15 @@ const generate = () => {
   // Generate Start
   console.log(tip('** Generate Start **'));
 
-  // Clash Template
-  let clashTemplate = yaml.parse(fs.readFileSync(clashTpl, 'utf-8'));
+  // Clash General
+  let generalConf = yaml.parse(fs.readFileSync(CLASH_GENERAL_PATH, 'utf-8'));
 
-  // generate Clash Own config
-  clashTemplate['Proxy'] = proxyArr;
-  clashTemplate['Proxy Group'] = proxyGroup;
-  clashTemplate['Rule'] = rule.concat(clashTemplate['Rule']);
-  fs.writeFileSync(clashOwn, yaml.stringify(clashTemplate));
-  console.log(tip('✓ Clash Own Config'));
+  // generate Clash Complete config
+  generalConf['Proxy'] = entireArr;
+  generalConf['Proxy Group'] = proxyGroup;
+  generalConf['Rule'] = ruleSet.concat(generalConf['Rule']);
+  fs.writeFileSync(CLASH_COMPLETE_PATH, yaml.stringify(generalConf));
+  console.log(tip('✓ Clash Complete Config'));
 
   // Generate End
   console.log(tip('** Generate End **'));

@@ -1,19 +1,18 @@
 const fs = require('fs');
-const path = require('path');
 const chalk = require('chalk');
 const droplr = require('droplr-api');
 
 // require own modules
 const { packPromise } = require('../util');
-const { accountConfig, uploadConfig } = require('./config');
-const axiosConfig = require('../../configs/axiosConfig');
+const axiosOption = require('../../configs/axiosOption');
+const { resourceConfig } = require('../../configs/defaultConfig');
+const { username, password } = require('../../configs/droplrAccount');
 
 // prepare phase
 const tip = chalk.green.bold;
-const { username, password } = accountConfig;
 const client = new droplr.Client({
   auth: new droplr.BasicAuth(username, password),
-  ...axiosConfig
+  ...axiosOption
 });
 
 /* upload */
@@ -23,8 +22,8 @@ const upload = async (config) => {
 
   let leng = config.length;
   for (let i = 0; i < leng; i++) {
-    let { id, name } = config[i];
-    let content = fs.readFileSync(name, 'utf-8');
+    let { id, name, path } = config[i];
+    let content = fs.readFileSync(path, 'utf-8');
 
     let [error, response] = await packPromise(
       client.drops.update(id, {
@@ -32,11 +31,10 @@ const upload = async (config) => {
       })
     );
 
-    let basename = path.basename(name);
     if (error) {
-      console.log(tip(`╳ ${basename}`));
+      console.log(tip(`╳ ${name}`));
     } else {
-      console.log(tip(`✓ ${basename}`));
+      console.log(tip(`✓ ${name}`));
     }
   }
 
@@ -44,4 +42,4 @@ const upload = async (config) => {
   console.log(tip('** Upload End **'));
 };
 
-upload(uploadConfig);
+upload(resourceConfig);

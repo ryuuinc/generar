@@ -1,12 +1,10 @@
-const path = require('path');
-
-/* resolve path */
-const tmpResolve = (src) => path.resolve(__dirname, '../tmp', src);
-
 /* decodeBase64 */
 const decodeBase64 = (base64Str) => {
   return new Buffer.from(base64Str, 'base64').toString();
 };
+
+/* path resolve */
+const pathResolve = (src) => path.resolve(__dirname, src);
 
 /* handle promise */
 const packPromise = (promise) => {
@@ -14,7 +12,6 @@ const packPromise = (promise) => {
 };
 
 module.exports = {
-  tmpResolve,
   decodeBase64,
   packPromise
 };
