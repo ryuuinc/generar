@@ -44,3 +44,4 @@ node_modules
 files/clash/complete.yaml
 files/resources/*
 files/rulesets/*
+!files/**/.gitkeep
