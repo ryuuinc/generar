@@ -39,3 +39,7 @@ node_modules
 .DS_Store
 .idea
 .vscode
+
+# files
+files/clash/complete.yaml
+files/resources/*
