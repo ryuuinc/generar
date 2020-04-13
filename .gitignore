@@ -43,3 +43,4 @@ node_modules
 # files
 files/clash/complete.yaml
 files/resources/*
+files/rulesets/*
