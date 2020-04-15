@@ -17,7 +17,7 @@ const decoUrl = (arr, baseUrl) => {
 };
 
 // necessary urls
-const N3RO_URL = 'https://nnn3ro.link/link/g5qkbSRs2U44K5bS';
+const SUB_URL = 'https://nnn3ro.link/link/g5qkbSRs2U44K5bS';
 const CLASH_RULE_URL = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/';
 const SHADOWR_RULE_URL = 'https://raw.githubusercontent.com/h2y/Shadowrocket-ADBlock-Rules/master/';
 
@@ -29,12 +29,12 @@ const CLASH_COMPLETE_PATH = path.resolve(__dirname, '../files/clash/complete.yam
 let resourceConfig = [
   {
     id: '7miiBr',
-    url: N3RO_URL,
+    url: SUB_URL,
     name: 'SSR.txt'
   },
   {
     id: 'dEFEJN',
-    url: N3RO_URL + '?mu=3',
+    url: SUB_URL + '?mu=3',
     name: 'SSD.txt'
   },
   {
@@ -67,19 +67,19 @@ let ruleSetConfig = [
     name: 'UnBan.list'
   },
   {
-    mode: '🍎 苹果服务',
+    mode: '🍎 苹果',
     name: 'Apple.list'
   },
   {
-    mode: 'Ⓜ️ 微软服务',
+    mode: 'Ⓜ️ 微软',
     name: 'Microsoft.list'
   },
   {
-    mode: '📲 电报服务',
+    mode: '📲 电报',
     name: 'Telegram.list'
   },
   {
-    mode: '📺 国外媒体',
+    mode: '📺 流媒体',
     name: 'ProxyMedia.list'
   },
   {
@@ -87,7 +87,7 @@ let ruleSetConfig = [
     name: 'GoogleCN.list'
   },
   {
-    mode: '🔰 常见域名',
+    mode: '🔰 黑名单',
     name: 'ProxyLite.list'
   },
   {
