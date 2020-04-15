@@ -1,8 +1,8 @@
-// require own modules
+// prepare
 const { decodeBase64 } = require('../util');
 
-/* str to node group */
-const strToNodeGroup = (str) => {
+/* str to 'Proxy' */
+const strToProxy = (str) => {
   let entireArr = [];
   let iplcArr = [];
   let relayArr = [];
@@ -42,4 +42,4 @@ const strToNodeGroup = (str) => {
   };
 };
 
-module.exports = strToNodeGroup;
+module.exports = strToProxy;

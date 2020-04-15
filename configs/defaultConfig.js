@@ -22,6 +22,7 @@ const CLASH_RULE_URL = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master
 const SHADOWR_RULE_URL = 'https://raw.githubusercontent.com/h2y/Shadowrocket-ADBlock-Rules/master/';
 
 // clash config
+const CLASH_NODE_PATH = path.resolve(__dirname, '../files/resources/SSD.txt');
 const CLASH_GENERAL_PATH = path.resolve(__dirname, '../files/clash/general.yaml');
 const CLASH_COMPLETE_PATH = path.resolve(__dirname, '../files/clash/complete.yaml');
 
@@ -108,6 +109,7 @@ decoUrl(ruleSetConfig, CLASH_RULE_URL);
 decoPath(ruleSetConfig, 'rulesets');
 
 module.exports = {
+  CLASH_NODE_PATH,
   CLASH_GENERAL_PATH,
   CLASH_COMPLETE_PATH,
   resourceConfig,

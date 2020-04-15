@@ -4,19 +4,15 @@
   "description": "A quick tool to generate Clash config",
   "author": "Tienuon",
   "scripts": {
-    "renew": "node scripts/renew/index.js",
-    "generate": "node scripts/generate/index.js",
-    "upload": "node scripts/upload/index.js",
-    "build": "run-s renew generate upload"
+    "server": "node scripts/server/index.js"
   },
   "dependencies": {
+    "@koa/router": "^9.0.0",
     "axios": "^0.19.2",
-    "chalk": "^4.0.0",
     "droplr-api": "^1.0.0",
+    "koa": "^2.11.0",
     "socks-proxy-agent": "^5.0.0",
     "yaml": "^1.8.2"
   },
-  "devDependencies": {
-    "npm-run-all": "^4.1.5"
-  }
+  "devDependencies": {}
 }

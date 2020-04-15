@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-/* template to rule */
+/* padding rulesets to 'Rule' */
 const padRuleSet = (config) => {
   let ruleSet = [];
   let configLeng = config.length;

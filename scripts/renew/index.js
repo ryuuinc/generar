@@ -1,40 +1,35 @@
 const fs = require('fs');
 const path = require('path');
-const chalk = require('chalk');
+const axios = require('axios');
 
-// require own modules
-const axiosOption = require('../../configs/axiosOption');
-const { resourceConfig, ruleSetConfig } = require('../../configs/defaultConfig');
+// prepare
 const { packPromise } = require('../util');
 
-// prepare phase
-const tip = chalk.green.bold;
-const axios = require('axios').create(axiosOption);
-const renewConfig = [].concat(resourceConfig, ruleSetConfig);
-
 /* renew */
-const renew = async (config) => {
-  // Renew Start
-  console.log(tip(`** Renew Start **`));
+const renew = async (axiosOption, renewConfig) => {
+  // message
+  let message = [];
 
-  let leng = config.length;
+  // axios instance
+  const instance = axios.create(axiosOption);
+
+  let leng = renewConfig.length;
   for (let i = 0; i < leng; i++) {
-    let conf = config[i];
+    let conf = renewConfig[i];
     if (conf.url == null) continue;
 
     let { url, name, path } = conf;
-    let [error, response] = await packPromise(axios.get(url));
+    let [error, response] = await packPromise(instance.get(url));
 
     if (error) {
-      console.log(tip(`╳ ${name}`));
+      message.push(`╳ ${name}`);
     } else {
       fs.writeFileSync(path, response.data);
-      console.log(tip(`✓ ${name}`));
+      message.push(`✓ ${name}`);
     }
   }
 
-  // Renew End
-  console.log(tip(`** Renew End **`));
+  return message;
 };
 
-renew(renewConfig);
+module.exports = renew;
