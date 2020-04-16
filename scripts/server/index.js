@@ -2,56 +2,51 @@ const Koa = require('koa');
 const Router = require('@koa/router');
 
 // prepare
-const axiosOption = require('../../configs/axiosOption');
-const { username, password } = require('../../configs/droplrAccount');
-const {
-  CLASH_NODE_PATH,
-  CLASH_GENERAL_PATH,
-  CLASH_COMPLETE_PATH,
-  resourceConfig,
-  ruleSetConfig
-} = require('../../configs/defaultConfig');
-const renewConfig = [].concat(resourceConfig, ruleSetConfig);
+const { renewConfig, ruleSetConfig, uploadConfig } = require('../../configs/defaultConfig');
 
 // scripts
 const renew = require('../renew');
 const generate = require('../generate');
 const upload = require('../upload');
+let errorList = { count: 0 };
 
 // koa and router instance
 const app = new Koa();
 const router = new Router({ prefix: '/generar' });
 
-// renew
-router.get('/renew', async (ctx, next) => {
-  const message = await renew(axiosOption, renewConfig);
-  ctx.body = { renew: message };
-});
-
-// generate
-router.get('/generate', async (ctx, next) => {
-  const message = generate(CLASH_NODE_PATH, CLASH_GENERAL_PATH, CLASH_COMPLETE_PATH, ruleSetConfig);
-  ctx.body = { generate: message };
-});
-
-// upload
-router.get('/upload', async (ctx, next) => {
-  const message = await upload(username, password, axiosOption, resourceConfig);
-  ctx.body = { upload: message };
-});
-
 // build
-router.get('/build', async (ctx, next) => {
-  const renewMes = await renew(axiosOption, renewConfig);
-  const generateMes = generate(
-    CLASH_NODE_PATH,
-    CLASH_GENERAL_PATH,
-    CLASH_COMPLETE_PATH,
-    ruleSetConfig
-  );
-  const uploadMes = await upload(username, password, axiosOption, resourceConfig);
+router.post('/build', async (ctx, next) => {
+  await renew(renewConfig, errorList);
+  generate(ruleSetConfig, errorList);
+  await upload(uploadConfig, errorList);
 
-  ctx.body = { renew: renewMes, generate: generateMes, upload: uploadMes };
+  // depend on count
+  ctx.body = { isDone: errorList.count === 0 ? true : false };
+});
+
+// retry
+router.post('/retry', async (ctx, next) => {
+  let newErrorList = { count: 0 };
+  for (let item in errorList) {
+    let config = errorList.item;
+    switch (item) {
+      case 'renew':
+        await renew(config, newErrorList);
+        break;
+      case 'generate':
+        await generate(config, newErrorList);
+        break;
+      case 'upload':
+        await await upload(config, newErrorList);
+        break;
+      default:
+        break;
+    }
+  }
+  errorList = newErrorList;
+
+  // depend on count
+  ctx.body = { isDone: errorList.count === 0 ? true : false };
 });
 
 app.use(router.routes()).use(router.allowedMethods());

@@ -3,9 +3,7 @@ const path = require('path');
 // add path for every item by the name and give folderName
 const decoPath = (arr, folderName) => {
   arr.forEach((item) => {
-    if (item.path == null) {
-      item.path = path.resolve(__dirname, '../files', folderName, item.name);
-    }
+    item.path = path.resolve(__dirname, '../files', folderName, item.name);
   });
 };
 
@@ -22,9 +20,16 @@ const CLASH_RULE_URL = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master
 const SHADOWR_RULE_URL = 'https://raw.githubusercontent.com/h2y/Shadowrocket-ADBlock-Rules/master/';
 
 // clash config
-const CLASH_NODE_PATH = path.resolve(__dirname, '../files/resources/SSD.txt');
-const CLASH_GENERAL_PATH = path.resolve(__dirname, '../files/clash/general.yaml');
-const CLASH_COMPLETE_PATH = path.resolve(__dirname, '../files/clash/complete.yaml');
+let clashConfig = [
+  {
+    id: 'lvBG4c',
+    name: 'general.yaml'
+  },
+  {
+    id: 'rsgfUn',
+    name: 'complete.yaml'
+  }
+];
 
 // resource config
 let resourceConfig = [
@@ -42,20 +47,8 @@ let resourceConfig = [
     id: 'H1itf2',
     url: SHADOWR_RULE_URL + 'sr_top500_whitelist.conf',
     name: 'WhiteList.conf'
-  },
-  {
-    id: 'lvBG4c',
-    name: 'ClashGeneral.yaml',
-    path: CLASH_GENERAL_PATH
-  },
-  {
-    id: 'rsgfUn',
-    name: 'ClashComplete.yaml',
-    path: CLASH_COMPLETE_PATH
   }
 ];
-
-decoPath(resourceConfig, 'resources');
 
 // ruleSet config
 let ruleSetConfig = [
@@ -105,13 +98,16 @@ let ruleSetConfig = [
   }
 ];
 
-decoUrl(ruleSetConfig, CLASH_RULE_URL);
+decoPath(clashConfig, 'clash');
+decoPath(resourceConfig, 'resources');
 decoPath(ruleSetConfig, 'rulesets');
+decoUrl(ruleSetConfig, CLASH_RULE_URL);
+
+let renewConfig = [].concat(resourceConfig, ruleSetConfig);
+let uploadConfig = [].concat(clashConfig, resourceConfig);
 
 module.exports = {
-  CLASH_NODE_PATH,
-  CLASH_GENERAL_PATH,
-  CLASH_COMPLETE_PATH,
-  resourceConfig,
-  ruleSetConfig
+  renewConfig,
+  ruleSetConfig,
+  uploadConfig
 };

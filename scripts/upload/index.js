@@ -3,21 +3,21 @@ const droplr = require('droplr-api');
 
 // prepare
 const { packPromise } = require('../util');
+const axiosOption = require('../../configs/axiosOption');
+const { username, password } = require('../../configs/droplrAccount');
 
 /* upload */
-const upload = async (username, password, axiosOption, resourceConfig) => {
-  // message
-  let message = [];
-
+const upload = async (uploadConfig, errorList) => {
   // initial Droplr
   const client = new droplr.Client({
     auth: new droplr.BasicAuth(username, password),
     ...axiosOption
   });
 
-  let leng = resourceConfig.length;
+  let leng = uploadConfig.length;
   for (let i = 0; i < leng; i++) {
-    let { id, name, path } = resourceConfig[i];
+    let conf = uploadConfig[i];
+    let { id, name, path } = conf;
     let content = fs.readFileSync(path, 'utf-8');
 
     let [error, response] = await packPromise(
@@ -27,13 +27,13 @@ const upload = async (username, password, axiosOption, resourceConfig) => {
     );
 
     if (error) {
-      message.push(`╳ ${name}\n`);
-    } else {
-      message.push(`✓ ${name}\n`);
+      errorList.count++;
+      if (errorList.upload == null) {
+        errorList.upload = [];
+      }
+      errorList.upload.push(conf);
     }
   }
-
-  return message;
 };
 
 module.exports = upload;
