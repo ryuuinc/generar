@@ -15,7 +15,8 @@ const decoUrl = (arr, baseUrl) => {
 };
 
 // necessary urls
-const SUB_URL = 'https://nnn3ro.link/link/g5qkbSRs2U44K5bS';
+// const SUB_URL = 'https://nnn3ro.link/link/g5qkbSRs2U44K5bS';
+const SUB_URL = process.env.SUB_URL;
 const CLASH_RULE_URL = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/';
 const SHADOWR_RULE_URL = 'https://raw.githubusercontent.com/h2y/Shadowrocket-ADBlock-Rules/master/';
 

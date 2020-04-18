@@ -4,7 +4,9 @@ const droplr = require('droplr-api');
 // prepare
 const { packPromise } = require('../util');
 const axiosOption = require('../../configs/axiosOption');
-const { username, password } = require('../../configs/droplrAccount');
+// const { username, password } = require('../../configs/droplrAccount');
+const username = process.env.DP_USER;
+const password = process.env.DP_PASS;
 
 /* upload */
 const upload = async (uploadConfig, errorList) => {
