@@ -12,7 +12,7 @@ let errorList = { count: 0 };
 
 // koa and router instance
 const app = new Koa();
-const router = new Router({ prefix: '/generar' });
+const router = new Router();
 
 // build
 router.post('/build', async (ctx, next) => {
