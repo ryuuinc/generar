@@ -8,4 +8,4 @@
 
 ## 使用
 
-使用 `Swarm mode` 进行部署
+使用 `Swarm mode` 进行部署，需要提供 `SUB_URL`、`DP_USERNAME`、`DP_PASSWORD` 三个环境变量来运行容器
