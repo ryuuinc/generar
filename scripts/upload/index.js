@@ -2,17 +2,16 @@ const fs = require('fs');
 const droplr = require('droplr-api');
 
 // prepare
+const DP_USERNAME = process.env.DP_USERNAME;
+const DP_PASSWORD = process.env.DP_PASSWORD;
 const { packPromise } = require('../util');
 const axiosOption = require('../../configs/axiosOption');
-// const { username, password } = require('../../configs/droplrAccount');
-const username = process.env.DP_USER;
-const password = process.env.DP_PASS;
 
 /* upload */
 const upload = async (uploadConfig, errorList) => {
   // initial Droplr
   const client = new droplr.Client({
-    auth: new droplr.BasicAuth(username, password),
+    auth: new droplr.BasicAuth(DP_USERNAME, DP_PASSWORD),
     ...axiosOption
   });
 
