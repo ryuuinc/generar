@@ -23,3 +23,5 @@ jobs:
       - name: Rsync to server
         run: |
           rsync -rvz -e 'ssh -p 56789' generar.tar root@$SEC_IP:~/
+      - name: Update Docker image
+          ssh root@$SEC_IP -p 56789 "docker rmi ryuuinc/generar; docker load < generar.tar"
