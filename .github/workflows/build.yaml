@@ -29,4 +29,4 @@ jobs:
           docker push $DOCKER_USERNAME/generar
       - name: SSH stuff
         run: |
-          ssh root@$IP -p 56789 "docker pull $DOCKER_USERNAME/generar"
+          ssh root@$IP -p 56789 "docker pull $DOCKER_USERNAME/generar; docker image prune --force"
