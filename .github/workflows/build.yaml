@@ -18,12 +18,15 @@ jobs:
           echo "$SEC_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -t ed25519 -p 56789 $SEC_IP >> ~/.ssh/known_hosts
-      - uses: docker/build-push-action@v1
-        with:
-          username: $SEC_USERNAME
-          password: $SEC_PASSWORD
-          repository: ryuuinc/generar
-          tags: latest
-      - name: Update Docker image
+      - name: Docker login
+        run: |
+          docker login -u $SEC_USERNAME -p $SEC_PASSWORD
+      - name: Docker build
+        run: |
+          docker build -t ryuuinc/generar .
+      - name: Docker publish
+        run: |
+          docker push ryuuinc/generar
+      - name: SSH stuff
         run: |
           ssh root@$SEC_IP -p 56789 "docker pull ryuuinc/generar"
