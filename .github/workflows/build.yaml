@@ -1,0 +1,25 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    env:
+      SEC_IP: ${{ secrets.IP }}
+      SEC_KEY: ${{ secrets.KEY }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Configuration environment
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SEC_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 -p 56789 $SEC_IP >> ~/.ssh/known_hosts
+      - name: Build the Docker image
+        run: |
+          docker build -t ryuuinc/generar .
+          docker save ryuuinc/generar > generar.tar
+      - name: Rsync to server
+        run: |
+          rsync -rvz -e 'ssh -p 56789' generar.tar root@$SEC_IP:~/
