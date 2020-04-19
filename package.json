@@ -10,7 +10,7 @@
     "url": "https://github.com/ryuuinc/generar.git"
   },
   "scripts": {
-    "start": "node scripts/server/index.js"
+    "start": "node lib/server/index.js"
   },
   "dependencies": {
     "@koa/router": "^9.0.0",
