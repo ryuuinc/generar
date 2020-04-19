@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const Router = require('@koa/router');
+require('dotenv').config();
 
 // prepare
 const { renewConfig, ruleSetConfig, uploadConfig } = require('../../configs/defaultConfig');

@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 50001
 
-CMD npm run server
+CMD npm run start
