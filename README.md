@@ -1,4 +1,4 @@
-# Generar
+# generar
 
 [![Build Status](https://github.com/ryuuinc/generar/workflows/Build/badge.svg)](https://github.com/ryuuinc/generar/actions)
 

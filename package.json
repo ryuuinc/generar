@@ -1,8 +1,14 @@
 {
   "name": "generar",
+  "description": "A quick tool to generate Clash config.",
   "version": "0.0.1",
-  "description": "A quick tool to generate Clash config",
-  "author": "Tienuon",
+  "author": "Kaiei Chu <ryuuinc@gmail.com>",
+  "homepage": "https://github.com/ryuuinc/generar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryuuinc/generar.git"
+  },
   "scripts": {
     "server": "node scripts/server/index.js"
   },
