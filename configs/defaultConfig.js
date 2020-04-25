@@ -16,7 +16,8 @@ const decoUrl = (arr, baseUrl) => {
 
 // necessary urls
 const SUB_URL = process.env.SUB_URL;
-const CLASH_RULE_URL = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/';
+// const CLASH_RULE_URL = 'https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/';
+const CLASH_RULE_URL = 'https://raw.githubusercontent.com/ryuuinc/regla/master/Clash/Ruleset/';
 const SHADOWR_RULE_URL = 'https://raw.githubusercontent.com/h2y/Shadowrocket-ADBlock-Rules/master/';
 
 // clash config
@@ -61,19 +62,31 @@ let ruleSetConfig = [
     name: 'UnBan.list'
   },
   {
-    mode: '🍎 苹果',
+    mode: 'Ⓜ️ 微软云盘',
+    name: 'OneDrive.list'
+  },
+  {
+    mode: '🍎 苹果服务',
     name: 'Apple.list'
   },
   {
-    mode: 'Ⓜ️ 微软',
-    name: 'Microsoft.list'
-  },
-  {
-    mode: '📲 电报',
+    mode: '📲 电报消息',
     name: 'Telegram.list'
   },
   {
-    mode: '📺 流媒体',
+    mode: '📹 油管视频',
+    name: 'YouTube.list'
+  },
+  {
+    mode: '🎥 网飞视频',
+    name: 'Netflix.list'
+  },
+  {
+    mode: '📺 巴哈姆特',
+    name: 'Bahamut.list'
+  },
+  {
+    mode: '🌏 国外媒体',
     name: 'ProxyMedia.list'
   },
   {
@@ -81,7 +94,7 @@ let ruleSetConfig = [
     name: 'GoogleCN.list'
   },
   {
-    mode: '🔰 黑名单',
+    mode: '🔰 黑色名单',
     name: 'ProxyLite.list'
   },
   {
