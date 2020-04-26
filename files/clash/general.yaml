@@ -36,5 +36,5 @@ cfw-latency-timeout: 5000
 Proxy: ~
 Proxy Group: ~
 Rule:
-  - GEOIP,CN,🎯 直连
-  - MATCH,🐟 漏网之鱼
+  - GEOIP,CN,DIRECT
+  - MATCH,🗑️ Final

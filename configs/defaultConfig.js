@@ -54,59 +54,59 @@ let resourceConfig = [
 // ruleSet config
 let ruleSetConfig = [
   {
-    mode: '🎯 直连',
+    mode: 'DIRECT',
     name: 'LocalAreaNetwork.list'
   },
   {
-    mode: '🎯 直连',
+    mode: 'DIRECT',
     name: 'UnBan.list'
   },
   {
-    mode: 'Ⓜ️ 微软云盘',
+    mode: '🔰 OneDrive',
     name: 'OneDrive.list'
   },
   {
-    mode: '🍎 苹果服务',
+    mode: '🔰 Apple',
     name: 'Apple.list'
   },
   {
-    mode: '📲 电报消息',
+    mode: '📮 Telegram',
     name: 'Telegram.list'
   },
   {
-    mode: '📹 油管视频',
+    mode: '📺 Youtube',
     name: 'YouTube.list'
   },
   {
-    mode: '🎥 网飞视频',
+    mode: '📺 Netflix',
     name: 'Netflix.list'
   },
   {
-    mode: '📺 巴哈姆特',
+    mode: '📺 Bahamut',
     name: 'Bahamut.list'
   },
   {
-    mode: '🌏 国外媒体',
+    mode: '🌍 Media',
     name: 'ProxyMedia.list'
   },
   {
-    mode: '🎯 直连',
+    mode: 'DIRECT',
     name: 'GoogleCN.list'
   },
   {
-    mode: '🔰 黑色名单',
+    mode: '🌍 Domain',
     name: 'ProxyLite.list'
   },
   {
-    mode: '🎯 直连',
+    mode: 'DIRECT',
     name: 'ChinaDomain.list'
   },
   {
-    mode: '🎯 直连',
+    mode: 'DIRECT',
     name: 'ChinaCompanyIp.list'
   },
   {
-    mode: '🎯 直连',
+    mode: 'DIRECT',
     name: 'Download.list'
   }
 ];
