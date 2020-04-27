@@ -1,4 +1,3 @@
-const os = require('os');
 const socksProxyAgent = require('socks-proxy-agent');
 
 let axiosOption = {
@@ -9,10 +8,10 @@ let axiosOption = {
 };
 
 // identify current system platform
-if (os.platform() === 'win32') {
+if (process.env.SOCKS_PROXY_AGENT != null) {
   axiosOption = Object.assign(axiosOption, {
     proxy: false,
-    httpsAgent: new socksProxyAgent('socks://127.0.0.1:7891')
+    httpsAgent: new socksProxyAgent(process.env.SOCKS_PROXY_AGENT)
   });
 }
 
