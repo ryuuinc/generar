@@ -1,10 +1,8 @@
 const path = require('path');
 
-// path
 const CLASH_GENERAL_PATH = path.resolve(__dirname, '../files/clash/general.yaml');
 const CLASH_COMPLETE_PATH = path.resolve(__dirname, '../files/clash/complete.yaml');
 
-// upload config
 let uploadConfig = [
   {
     id: process.env.DP_DROPID,
@@ -13,7 +11,6 @@ let uploadConfig = [
   }
 ];
 
-// ruleSet config
 let ruleSetConfig = [
   {
     mode: 'DIRECT',
