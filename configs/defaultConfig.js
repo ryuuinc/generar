@@ -21,10 +21,6 @@ let ruleSetConfig = [
     name: 'UnBan.list'
   },
   {
-    mode: '🔰 OneDrive',
-    name: 'OneDrive.list'
-  },
-  {
     mode: '🔰 Apple',
     name: 'Apple.list'
   },
