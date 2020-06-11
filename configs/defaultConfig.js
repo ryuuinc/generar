@@ -21,11 +21,11 @@ let ruleSetConfig = [
     name: 'UnBan.list'
   },
   {
-    mode: '🔰 Apple',
+    mode: '🍎 Apple',
     name: 'Apple.list'
   },
   {
-    mode: '📮 Telegram',
+    mode: '📲 Telegram',
     name: 'Telegram.list'
   },
   {
@@ -35,10 +35,6 @@ let ruleSetConfig = [
   {
     mode: '📺 Netflix',
     name: 'Netflix.list'
-  },
-  {
-    mode: '📺 Bahamut',
-    name: 'Bahamut.list'
   },
   {
     mode: '🌍 Media',
