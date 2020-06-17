@@ -37,4 +37,4 @@ Proxy: ~
 Proxy Group: ~
 Rule:
   - GEOIP,CN,DIRECT
-  - MATCH,🐟 Final
+  - MATCH,🐟 FINAL

@@ -21,23 +21,23 @@ let ruleSetConfig = [
     name: 'UnBan.list'
   },
   {
-    mode: '🍎 Apple',
+    mode: '🍎 APPLE',
     name: 'Apple.list'
   },
   {
-    mode: '📲 Telegram',
+    mode: '📲 TELEGRAM',
     name: 'Telegram.list'
   },
   {
-    mode: '📺 Youtube',
+    mode: '📺 YOUTUBE',
     name: 'YouTube.list'
   },
   {
-    mode: '📺 Netflix',
+    mode: '📺 NETFLIX',
     name: 'Netflix.list'
   },
   {
-    mode: '🌍 Media',
+    mode: '📺 MEDIA',
     name: 'ProxyMedia.list'
   },
   {
@@ -45,7 +45,7 @@ let ruleSetConfig = [
     name: 'GoogleCN.list'
   },
   {
-    mode: '🌍 Domain',
+    mode: '🌍 DOMAIN',
     name: 'ProxyLite.list'
   },
   {
