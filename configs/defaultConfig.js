@@ -21,28 +21,16 @@ let ruleSetConfig = [
     name: 'UnBan.list'
   },
   {
-    mode: '🍎 APPLE',
+    mode: 'DIRECT',
+    name: 'GoogleCN.list'
+  },
+  {
+    mode: 'DIRECT',
     name: 'Apple.list'
-  },
-  {
-    mode: '📲 TELEGRAM',
-    name: 'Telegram.list'
-  },
-  {
-    mode: '📺 YOUTUBE',
-    name: 'YouTube.list'
-  },
-  {
-    mode: '📺 NETFLIX',
-    name: 'Netflix.list'
   },
   {
     mode: '📺 MEDIA',
     name: 'ProxyMedia.list'
-  },
-  {
-    mode: 'DIRECT',
-    name: 'GoogleCN.list'
   },
   {
     mode: '🌍 DOMAIN',
