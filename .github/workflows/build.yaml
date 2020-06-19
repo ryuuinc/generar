@@ -7,6 +7,7 @@ jobs:
     env:
       IP: ${{ secrets.IP }}
       KEY: ${{ secrets.KEY }}
+      PORT: ${{ secrets.PORT }}
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     runs-on: ubuntu-latest
@@ -17,16 +18,13 @@ jobs:
           mkdir -p ~/.ssh/
           echo "$KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -t ed25519 -p 56789 $IP >> ~/.ssh/known_hosts
-      - name: Docker login
-        run: |
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-      - name: Docker build
-        run: |
-          docker build -t $DOCKER_USERNAME/generar .
-      - name: Docker publish
-        run: |
-          docker push $DOCKER_USERNAME/generar
+          ssh-keyscan -t ed25519 -p $PORT $IP >> ~/.ssh/known_hosts
+      - uses: docker/build-push-action@v1
+        with:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
+          repository: ryuuinc/generar
+          tags: latest
       - name: SSH stuff
         run: |
-          ssh root@$IP -p 56789 "docker pull $DOCKER_USERNAME/generar"
+          ssh root@$IP -p $PORT "./docker_generar.sh"
