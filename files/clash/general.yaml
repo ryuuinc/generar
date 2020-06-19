@@ -1,12 +1,5 @@
-mixed-port: 7890
-allow-lan: false
-mode: Rule
-log-level: info
-external-controller: 127.0.0.1:9090
-experimental:
-  ignore-resolve-fail: true
 Proxy: ~
 Proxy Group: ~
 Rule:
   - GEOIP,CN,DIRECT
-  - MATCH,🐟 FISHNET
+  - MATCH,FISHNET

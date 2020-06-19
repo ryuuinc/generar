@@ -29,11 +29,11 @@ let ruleSetConfig = [
     name: 'Apple.list'
   },
   {
-    mode: '📺 MEDIA',
+    mode: 'MEDIA',
     name: 'ProxyMedia.list'
   },
   {
-    mode: '🌍 DOMAIN',
+    mode: 'DOMAIN',
     name: 'ProxyLite.list'
   },
   {
