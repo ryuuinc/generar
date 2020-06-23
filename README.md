@@ -1,6 +1,6 @@
 # generar
 
-[![Build Status](https://github.com/ryuuinc/generar/workflows/Build/badge.svg)](https://github.com/ryuuinc/generar/actions)
+[![Build Status](https://github.com/ryuuinc/generar/workflows/Docker/badge.svg)](https://github.com/ryuuinc/generar/actions)
 
 ## 介绍
 
