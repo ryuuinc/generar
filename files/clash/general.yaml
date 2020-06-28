@@ -29,8 +29,8 @@ dns:
     geoip: true
     ipcidr:
       - 240.0.0.0/4
-Proxy: ~
-Proxy Group: ~
-Rule:
+proxies: ~
+proxy-groups: ~
+rules:
   - GEOIP,CN,DIRECT
   - MATCH,FISHNET
