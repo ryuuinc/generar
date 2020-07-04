@@ -10,6 +10,6 @@ COPY lib ./lib
 COPY files ./files
 COPY configs ./configs
 
-EXPOSE 50001
+EXPOSE 55001
 
 CMD ["npm", "start"]

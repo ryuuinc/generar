@@ -13,7 +13,7 @@
     "start": "node lib/index.js"
   },
   "dependencies": {
-    "@koa/router": "^9.0.1",
+    "@koa/router": "^9.1.0",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "droplr-api": "^1.0.0",
