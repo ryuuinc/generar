@@ -35,4 +35,4 @@ jobs:
 
       - name: Run shell script remotely
         run: |
-          ssh root@$IP -p $PORT "./source/script/docker-generar.sh"
+          ssh root@$IP -p $PORT "./source/script/docker.sh generar"
