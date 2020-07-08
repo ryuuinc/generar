@@ -1,4 +1,4 @@
-# build
+# release
 FROM node:12.18.2-alpine
 WORKDIR /generar
 COPY package*.json ./
