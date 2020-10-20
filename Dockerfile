@@ -1,5 +1,5 @@
 # release
-FROM node:12.18.2-alpine
+FROM node:12.19.0-alpine
 WORKDIR /generar
 COPY package*.json ./
 RUN npm ci --production
