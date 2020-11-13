@@ -13,8 +13,8 @@
     "start": "node lib/index.js"
   },
   "dependencies": {
-    "@koa/router": "^9.4.0",
-    "axios": "^0.19.2",
+    "@koa/router": "^10.0.0",
+    "axios": "^0.21.0",
     "dotenv": "^8.2.0",
     "koa": "^2.13.0",
     "socks-proxy-agent": "^5.0.0",
