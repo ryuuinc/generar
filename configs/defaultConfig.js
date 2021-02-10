@@ -8,18 +8,17 @@ let nodeMap = new Map([
     }
   ],
   [
-    'v2ray',
+    'vmess',
     {
       url: process.env.NODE_URL,
-      type: 'V2Ray.txt'
+      type: 'VMess.txt'
     }
   ]
 ]);
 
 // config map
 let configMap = new Map([
-  ['n3ro', 'N3RO.yaml'],
-  ['linode', 'Linode.yaml'],
+  ['airport', 'Airport.yaml'],
   ['bandwagon', 'Bandwagon.yaml'],
   ['quantumultx', 'QuantumultX.conf']
 ]);
