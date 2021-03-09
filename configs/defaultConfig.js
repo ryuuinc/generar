@@ -20,6 +20,7 @@ let nodeMap = new Map([
 let configMap = new Map([
   ['airport', 'Airport.yaml'],
   ['bandwagon', 'Bandwagon.yaml'],
+  ['gateway', 'Gateway.yaml'],
   ['quantumultx', 'QuantumultX.conf']
 ]);
 
