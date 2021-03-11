@@ -1,30 +1,27 @@
-// node map
-let nodeMap = new Map([
+let nodeMaps = new Map([
   [
-    'clash',
+    'ssr',
     {
-      url: process.env.SUB_URL,
-      type: 'Clash-Node.yaml'
+      fileUrl: process.env.SSR_URL,
+      fileName: 'SSR.yaml'
     }
   ],
   [
-    'vmess',
+    'vless',
     {
-      url: process.env.NODE_URL,
-      type: 'VMess.txt'
+      fileUrl: process.env.VLESS_URL,
+      fileName: 'VLESS.txt'
     }
   ]
 ]);
 
-// config map
-let configMap = new Map([
+let configMaps = new Map([
   ['airport', 'Airport.yaml'],
-  ['bandwagon', 'Bandwagon.yaml'],
   ['gateway', 'Gateway.yaml'],
   ['quantumultx', 'QuantumultX.conf']
 ]);
 
 module.exports = {
-  nodeMap,
-  configMap
+  nodeMaps,
+  configMaps
 };
