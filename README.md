@@ -1,0 +1,29 @@
+# generar
+
+[![Build Status](https://github.com/ryuuinc/generar/workflows/Docker/badge.svg)](https://github.com/ryuuinc/generar/actions)
+
+## 介绍
+
+通过机场订阅和 `Gist` 配合生成代理软件配置文件
+
+## 使用
+
+使用 `Swarm mode` 进行部署，需要提供如下环境变量：
+
+```bash
+CONFIG_NAME='xxxx'
+CONFIG_URL='xxxx'
+TEMPLATE_URL='xxxx'
+```
+
+本地调试需要提供 `SOCKS_PROXY_AGENT`
+
+部署时需要在 `Actions secrets` 中添加如下环境变量：
+
+```bash
+IP='x.x.x.x'
+KEY='xxxx'
+PORT='xxxx'
+DOCKERHUB_USERNAME='xxxx'
+DOCKERHUB_TOKEN='xxxx'
+```

@@ -1,0 +1,23 @@
+{
+  "name": "generar",
+  "description": "A quick tool to generate proxy client config",
+  "version": "0.0.1",
+  "author": "Kaiei Chu <ryuuinc@gmail.com>",
+  "homepage": "https://github.com/ryuuinc/generar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryuuinc/generar.git"
+  },
+  "scripts": {
+    "start": "node lib/index.js"
+  },
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
+    "koa": "^2.13.4",
+    "socks-proxy-agent": "^7.0.0",
+    "yaml": "^2.1.1"
+  }
+}
