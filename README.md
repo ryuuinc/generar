@@ -8,7 +8,7 @@
 
 ## 使用
 
-使用 `Swarm mode` 进行部署，需要提供如下环境变量：
+使用 `Docker` 进行部署，需要提供如下环境变量：
 
 ```bash
 PRODUCTION=true
@@ -22,9 +22,7 @@ TEMPLATE_URL='xxxx'
 部署时需要在 `Actions secrets` 中添加如下环境变量：
 
 ```bash
-IP='x.x.x.x'
-KEY='xxxx'
-PORT='xxxx'
 DOCKERHUB_USERNAME='xxxx'
-DOCKERHUB_TOKEN='xxxx'
+DOCKERHUB_IMAGENAME='xxxx'
+DOCKERHUB_TOKEN ='xxxx'
 ```
