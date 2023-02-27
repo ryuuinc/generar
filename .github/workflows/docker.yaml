@@ -41,7 +41,3 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/generar:latest
-
-      - name: Run shell script remotely
-        run: |
-          ssh root@$IP -p $PORT "./boost/swarm.sh generar"
