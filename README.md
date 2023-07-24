@@ -14,7 +14,6 @@
 PRODUCTION=true
 SETTING_NAME=generar.json
 SETTING_URL=xxxx
-SOCKS_PROXY=xxxx
 ```
 
 本地调试需要提供 `SOCKS_PROXY` 且 `PRODUCTION` 为 `false`
