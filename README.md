@@ -13,7 +13,8 @@
 ```bash
 PRODUCTION=true
 SETTING_NAME=generar.json
-SETTING_URL='xxxx'
+SETTING_URL=xxxx
+SOCKS_PROXY=xxxx
 ```
 
 本地调试需要提供 `SOCKS_PROXY` 且 `PRODUCTION` 为 `false`
@@ -21,7 +22,7 @@ SETTING_URL='xxxx'
 部署时需要在 `Actions secrets` 中添加如下环境变量：
 
 ```bash
-DOCKERHUB_USERNAME='xxxx'
-DOCKERHUB_IMAGENAME='xxxx'
-DOCKERHUB_TOKEN ='xxxx'
+DOCKERHUB_USERNAME=xxxx
+DOCKERHUB_IMAGENAME=xxxx
+DOCKERHUB_TOKEN=xxxx
 ```
