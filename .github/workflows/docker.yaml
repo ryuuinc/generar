@@ -7,11 +7,6 @@ on:
     paths-ignore:
       - '**/README.md'
 
-env:
-  IP: ${{ secrets.IP }}
-  KEY: ${{ secrets.KEY }}
-  PORT: ${{ secrets.PORT }}
-
 jobs:
   build:
     name: Build
